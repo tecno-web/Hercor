@@ -1,0 +1,21 @@
+﻿@model Hercor.Models.Product
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<div class="container">
+    <div class="row">
+        <h2>@Model.Title</h2>
+
+        <div>
+            <hr />
+            
+            <div class="col-md-12">
+                <img src="~/Content/images/product/@Model.Image" alt="" />
+                @Html.Raw(Model.Content)
+            </div>
+            
+        </div>
+    </div>
+</div>
+

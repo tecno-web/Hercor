@@ -1,0 +1,142 @@
+﻿@model IEnumerable<Hercor.Models.Product>
+@{
+    ViewBag.Title = "Bienvenidos";
+}
+
+
+	<section id="home">
+		<div class="home-pattern"></div>
+		<div id="main-carousel" class="carousel slide" data-ride="carousel"> 
+			<ol class="carousel-indicators">
+				<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#main-carousel" data-slide-to="1"></li>
+			</ol><!--/.carousel-indicators--> 
+			<div class="carousel-inner">
+				
+				@foreach (var item in ViewBag.data)
+                {
+                    if (item.BannerId == 1)
+                    {
+                        <div class="item active" style="background-image: url(../Content/images/slider/@item.Image)">
+                            <div class="carousel-caption">
+                                <div>
+                                    <h2 class="heading animated bounceInDown">@item.Title</h2>
+                                    <p class="animated bounceInUp">@item.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="item" style="background-image: url(../Content/images/slider/@item.Image)">
+                            <div class="carousel-caption">
+                                <div>
+                                    <h2 class="heading animated bounceInDown">@item.Title</h2>
+                                    <p class="animated bounceInUp">@item.Description </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                }
+			@*<div class="item" style="background-image: url(../Content/images/slider/constro-bg-1.jpg)"> 
+				<div class="carousel-caption"> 
+					<div> 
+						<h2 class="heading animated bounceInRight">Fully Responsive Template</h2> 
+						<p class="animated bounceInLeft">100% Responsive HTML template</p>
+					</div> 
+				</div> 
+			</div>*@
+		</div><!--/.carousel-inner-->
+
+		<a class="carousel-left member-carousel-control hidden-xs" href="#main-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+		<a class="carousel-right member-carousel-control hidden-xs" href="#main-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+	</div> 
+
+</section><!--/#home-->
+
+<section id="about-us">
+	<div class="container">
+		<div class="text-center">
+			<div class="col-sm-8 col-sm-offset-2">
+				<h2 class="title-one">NOSOTROS</h2>
+			</div>
+		</div>
+		<div class="about-us">
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-chain-broken"></i> Misión</a></li>
+						<li><a href="#mission" data-toggle="tab"><i class="fa fa-th-large"></i> Visión</a></li>
+						<li><a href="#community" data-toggle="tab"><i class="fa fa-users"></i> Historia</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="about">
+							<div class="media">
+								<div class="media-body">
+									<p>Producir y comercializar una extensa gama de prefabricados de concreto y servicios relacionados con la construcción, actualizar sobre sus nuevas tecnologías a las personas relacionadas con el sector, empeñados siempre en la garantía, seguridad, durabilidad y calidad de nuestros productos esperando sobrepasar las expectativas del cliente.</p>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="mission">
+							<div class="media">
+								<div class="media-body">
+									<p><div><span style="line-height: 1.42857;">Ser la empresa líder y reconocidos por nuestra marca en la industria Cruceña en la fabricación y suministro de Prefabricados de Concreto, productos y servicios afines, que garantiza la mejor calidad y satisfacción al cliente, promoviendo el desarrollo y bienestar de nuestro personal y de la sociedad.</span><br></div><div>Nuestros Valores</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Credibilidad</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Responsabilidad</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Capacidad de Compromiso</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Fiabilidad</div></p>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="community">
+							<div class="media">
+								<div class="media-body">
+									<p><div>HERCOR es una empresa fabricante de productos prefabricados de concreto que inició operaciones en la ciudad de Santa Cruz, tras un asocio entre inversionistas cruceños.</div><div>Desde sus inicios cuenta con tecnología, capaz de producir productos prefabricados de concreto tales como: Viguetas pretensadas, cordones, postes para enmallados, mallas olímpicas, etc.</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Esta tecnología permite garantizar altos estándares de calidad para producir productos siguiendo las normas internacionales de fabricación como lo es la norma internacional de absorción y resistencia ASTM C90.</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Toda esta tecnología va acompañada por una excelente atención personalizada de sus INGENIEROS-ARQUITECTOS quienes conocen, entienden y escuchan las necesidades y expectativas de los clientes y les facilitan las soluciones más beneficiosas para cada una de sus necesidades y así conozcan la calidad y garantía de la marca HERCOR.</div><div>Le invitamos a que nos conozca y pruebe nuestros productos y le garantizamos que una vez que usted pruebe uno de nuestros productos HERCOR, usted jamás dejará de ser un cliente HERCOR</div><div>HERCOR ES SERVICIO, HERCOR ES CALIDAD, HERCOR ES TECNOLOGIA A UN PRECIO JUSTO.</div></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/#about-us-->
+
+					<section id="blog">
+    <div class="container">
+        <div class="row text-center clearfix">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2 class="title-one">PRODUCTOS</h2>
+                <p class="blog-heading">Conozca todos nuestros productos.</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                if (item.Eliminate == true)
+                {
+                    <div class="col-sm-4">
+                        <div class="single-blog">
+                            @if (item.Image != null)
+                            {
+                                <img src="~/Content/images/product/@item.Image" alt="" />
+                            }
+                            else
+                            {
+                                <img src="~/Content/images/blog/1.jpg" alt="" />
+                            }
+                            <h2>@item.Title</h2>
+                            @*<ul class="post-meta">
+                                    <li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li>
+                                    <li><i class="fa fa-clock-o"></i><strong> Posted On:</strong> Apr 15 2014</li>
+                                </ul>*@
+                            <div class="blog-content">
+                                <p>@item.Description</p>
+                            </div>
+                            <a href="/Products/Detalle/@item.Slug" target="_blank" class="btn btn-primary">Mas Información</a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section> <!--/#blog-->
+
+						

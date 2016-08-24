@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative One Page Parallax Template">
+    <meta name="keywords" content="Creative, Onepage, Parallax, HTML5, Bootstrap, Popular, custom, personal, portfolio" />
+    <meta name="author" content="">
+    <title>@ViewBag.Title - Hercor</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/css/animate.css" rel="stylesheet">
+    <link href="~/Content/css/main.css" rel="stylesheet">
+    <link href="~/Content/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]> <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script> <![endif]-->
+    <link rel="shortcut icon" href="../Content/images/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/Content/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/Content/images/ico/apple-touch-icon-57-precomposed.png">
+    <script type="text/javascript" src="~/Content/js/jquery.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/smoothscroll.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="~/Content/js/main.js"></script>
+    <script type="text/javascript" src="~/Content/js/tinymce.min.js"></script>
+    <script>tinymce.init({
+        selector: 'textarea',
+        height: 500,
+        theme: 'modern',
+        plugins: [
+          'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+          'searchreplace wordcount visualblocks visualchars code fullscreen',
+          'insertdatetime media nonbreaking save table contextmenu directionality',
+          'emoticons template paste textcolor colorpicker textpattern imagetools'
+        ],
+        });
+    </script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container">
+
+        @Html.AntiForgeryToken()
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Administrador</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/Products">Productos</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="~/Banners">Slider Banner</a></li>
+                        <li><a href="/Account/Register">Crear Usuario</a></li>
+                    </ul>
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <ul class="nav navbar-nav navbar-right">
+                            @if (Request.IsAuthenticated)
+                            {
+
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
+                                <li><a href="~/Account/ForgotPassword">Cambiar Contraseña</a></li>
+                            }
+                            else
+                            {
+                                <li class="active"><a href="~/Account/Login">Login</a></li>
+                            }
+
+                            <li><a href="../navbar-static-top/"></a></li>
+                        </ul>
+                    }
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+
+        </nav>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            @RenderBody()
+        </div>
+    </div>
+
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
