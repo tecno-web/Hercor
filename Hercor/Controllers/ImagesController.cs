@@ -7,9 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hercor.Models;
+using System.IO;
 
 namespace Hercor.Controllers
 {
+    [Authorize]
     public class ImagesController : Controller
     {
         private ModelFirst db = new ModelFirst();
@@ -48,10 +50,17 @@ namespace Hercor.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ImageId,ImageProduct,ProductId")] Image image)
+        public ActionResult Create([Bind(Include = "ImageId,ImageProduct,ProductId")] Image image, HttpPostedFileBase ImageProduct)
         {
             if (ModelState.IsValid)
             {
+                if (ImageProduct != null && ImageProduct.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(ImageProduct.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/images/product"), fileName);
+                    ImageProduct.SaveAs(path);
+                    image.ImageProduct = Path.GetFileName(ImageProduct.FileName);
+                }
                 db.Image.Add(image);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,10 +91,17 @@ namespace Hercor.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ImageId,ImageProduct,ProductId")] Image image)
+        public ActionResult Edit([Bind(Include = "ImageId,ImageProduct,ProductId")] Image image, HttpPostedFileBase ImageProduct)
         {
             if (ModelState.IsValid)
             {
+                if (ImageProduct != null && ImageProduct.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(ImageProduct.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/images/product"), fileName);
+                    ImageProduct.SaveAs(path);
+                    image.ImageProduct = Path.GetFileName(ImageProduct.FileName);
+                }
                 db.Entry(image).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

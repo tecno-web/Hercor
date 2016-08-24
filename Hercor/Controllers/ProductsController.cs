@@ -11,6 +11,7 @@ using System.IO;
 
 namespace Hercor.Controllers
 {
+    
     public class ProductsController : Controller
     {
         private ModelFirst db = new ModelFirst();
@@ -39,11 +40,13 @@ namespace Hercor.Controllers
             {
                  ProductId = item.ProductId;
             }
+            ViewBag.Image = db.Image.Where(p => p.ProductId.Equals(ProductId));
             Product pr = db.Product.Find(ProductId);
             return View(pr);
 
         }
         // GET: Products/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -59,6 +62,7 @@ namespace Hercor.Controllers
         }
 
         // GET: Products/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -69,6 +73,7 @@ namespace Hercor.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "ProductId,Title,Description,,Content,Slug,Image,Eliminate")] Product product, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
@@ -89,6 +94,7 @@ namespace Hercor.Controllers
         }
 
         // GET: Products/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -108,6 +114,7 @@ namespace Hercor.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "ProductId,Title,Description,,Content,Slug,Image,Eliminate")] Product product, HttpPostedFileBase Image)
         {
             
@@ -128,6 +135,7 @@ namespace Hercor.Controllers
         }
 
         // GET: Products/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -145,6 +153,7 @@ namespace Hercor.Controllers
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Product.Find(id);
