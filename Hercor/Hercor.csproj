@@ -260,6 +260,8 @@
     <Content Include="Content\css\prettyPhoto.css" />
     <Content Include="Content\css\reset.css" />
     <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\unslider-dots.css" />
+    <Content Include="Content\css\unslider.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\about-us\about.jpg" />
@@ -369,6 +371,7 @@
     <Content Include="Content\js\smoothscroll.js" />
     <Content Include="Content\js\themes\modern\theme.min.js" />
     <Content Include="Content\js\tinymce.min.js" />
+    <Content Include="Content\js\unslider-min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -384,6 +387,7 @@
     <Content Include="Content\js\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="Content\js\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Content\js\skins\lightgray\fonts\tinymce.woff" />
+    <None Include="Properties\PublishProfiles\HERCOR.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
