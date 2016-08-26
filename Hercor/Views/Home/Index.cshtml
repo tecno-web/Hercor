@@ -17,7 +17,7 @@
                 {
                     if (item.BannerId == 1)
                     {
-                        <div class="item active" style="background-image: url(~/Content/images/slider/@item.Image)">
+                        <div class="item active" style="background-image: url(../Content/images/slider/@item.Image)">
                             <div class="carousel-caption">
                                 <div>
                                     <h2 class="heading animated bounceInDown">@item.Title</h2>
@@ -28,7 +28,7 @@
                     }
                     else
                     {
-                        <div class="item" style="background-image: url(~/Content/images/slider/@item.Image)">
+                        <div class="item" style="background-image: url(../Content/images/slider/@item.Image)">
                             <div class="carousel-caption">
                                 <div>
                                     <h2 class="heading animated bounceInDown">@item.Title</h2>
@@ -130,7 +130,29 @@
                             <div class="blog-content">
                                 <p>@item.Description</p>
                             </div>
-                            <a href="/Products/Detalle/@item.Slug" target="_blank" class="btn btn-primary">Mas Información</a>
+                            <a href="" id="read" class="btn btn-primary" data-toggle="modal" data-target="#blog-seven">Mas Informacion</a>
+                        </div>
+                        <div class="modal fade" id="blog-seven" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <script type="text/jscript">
+                                            $('#read').click(function () {
+                                                var url = "/Products/Detalle/";
+                                                var slug = "@item.Slug";
+                                                var res = url.concat(slug);
+                                                console.log(res);
+                                                $.get(res, null, function (data) {
+                                                    $("#rData").html(data);
+                                                });
+                                            })
+                                        </script>
+                                        <p id="rData"></p>
+                                        @Html.Raw(item.Content)
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 }

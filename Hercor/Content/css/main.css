@@ -1187,8 +1187,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-address {
 	background-color: #fff;
-	height:390px;
-	padding-top:85px
+	height:450px;
+	padding-top:30px
 }
 
 .contact-address .social-icons a i {
@@ -1245,7 +1245,7 @@ h1, h2, h3, h4, h5, h6 {
 #contact-form-section {	
 	padding:35px;
 	background-color: #FFF; 
-	height:390px;
+	height:450px;
 }
 #contact-form-section .btn-primary {
 	background-color:#fe7730;

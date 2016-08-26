@@ -1,37 +1,15 @@
-﻿@model Hercor.Models.Product
-@{
+﻿@{
     ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_LayoutProduct.cshtml";
 }
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
             <div class="default-slider">
-
                 <ul>
                     @foreach (var item in ViewBag.Image)
                     {
                         <li><img src="~/Content/images/product/@item.ImageProduct" alt="" /></li>
                     }
                 </ul>
-
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <h2>@Model.Title</h2>
-
-        <div>
-            <hr />
-            
-            <div class="col-md-12">
-                @Html.Raw(Model.Content)
-            </div>
-            
-        </div>
-    </div>
-</div>
-<br><br><br>
 @section scripts
 {
     <script>

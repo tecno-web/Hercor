@@ -26,20 +26,24 @@ namespace Hercor.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(string name,string email,string message)
         {
-            MailMessage mail = new MailMessage("josepe.pedraza@gmail.com", "josepe.pedraza@gmail.com");
+            MailMessage mail = new MailMessage("info@hercor.com.bo", "acortez@ricortconstructora.com");
             SmtpClient client = new SmtpClient();
-            client.Port = 587;
-            client.EnableSsl = true;
+            client.Port = 25;
+            client.EnableSsl = false;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.UseDefaultCredentials = false;
-            client.Host = "smtp.gmail.com";
+            client.Host = "mail.carnation.arvixe.com";
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.Credentials = new System.Net.NetworkCredential("josepe.pedraza@gmail.com","October_2016");
-            mail.Subject =  String.Format("this is a test email {0}",name);
-            mail.Body = message;
+            client.Credentials = new System.Net.NetworkCredential("info@hercor.com.bo", "hn89sxMC78");
+            mail.CC.Add("josepe.pedraza@gmail.com");
+            mail.Subject =  String.Format("Correo de contacto pagina web Hercor de: {0}",name);
+            mail.IsBodyHtml = true;
+            mail.Body = String.Format("<strong>Email de Contancto: {0}</strong><br><strong>Mensaje: {1}</strong>",email,message);
             client.Send(mail);
             ViewBag.Mensaje = "Se envio";
             var product = model.Product;
+            var banner = model.Banner;
+            ViewBag.data = banner.ToList();
             return View(product.ToList());
         }
         public ActionResult Admin()
