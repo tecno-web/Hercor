@@ -26,7 +26,7 @@ namespace Hercor.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(string name,string email,string message)
         {
-            MailMessage mail = new MailMessage("info@hercor.com.bo", "acortez@ricortconstructora.com");
+            MailMessage mail = new MailMessage("info@hercor.com.bo", "info@hercor.com.bo");
             SmtpClient client = new SmtpClient();
             client.Port = 25;
             client.EnableSsl = false;
@@ -35,7 +35,7 @@ namespace Hercor.Controllers
             client.Host = "mail.carnation.arvixe.com";
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.Credentials = new System.Net.NetworkCredential("info@hercor.com.bo", "hn89sxMC78");
-            mail.CC.Add("josepe.pedraza@gmail.com");
+            mail.CC.Add("acortez@ricortconstructora.com");
             mail.Subject =  String.Format("Correo de contacto pagina web Hercor de: {0}",name);
             mail.IsBodyHtml = true;
             mail.Body = String.Format("<strong>Email de Contancto: {0}</strong><br><strong>Mensaje: {1}</strong>",email,message);
@@ -54,7 +54,7 @@ namespace Hercor.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Ricort(string name, string phone ,string email,string metros,string lugar,string estilo,string plantas,string topografia, string message)
         {
-            MailMessage mail = new MailMessage("info@hercor.com.bo", "josepe.pedraza@gmail.com");
+            MailMessage mail = new MailMessage("info@hercor.com.bo", "info@ricortconstructora.com");
             SmtpClient client = new SmtpClient();
             client.Port = 25;
             client.EnableSsl = false;
@@ -63,7 +63,7 @@ namespace Hercor.Controllers
             client.Host = "mail.carnation.arvixe.com";
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.Credentials = new System.Net.NetworkCredential("info@hercor.com.bo", "hn89sxMC78");
-            mail.CC.Add("josepe.pedraza@gmail.com");
+            mail.CC.Add("acortez@ricortconstructora.com");
             mail.Subject = String.Format("Correo de contacto pagina web Ricort de: {0}", name);
             mail.IsBodyHtml = true;
             mail.Body = String.Format
