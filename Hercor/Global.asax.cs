@@ -17,11 +17,11 @@ namespace Hercor
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-        protected void Application_Error()
-        {
-            Exception exc = Server.GetLastError();
-            Server.ClearError();
-            Response.Redirect("/ErrorPage/ErrorMessage");
-        }
+        //protected void Application_Error()
+        //{
+        //    Exception exc = Server.GetLastError();
+        //    Server.ClearError();
+        //    Response.Redirect("/ErrorPage/ErrorMessage");
+        //}
     }
 }

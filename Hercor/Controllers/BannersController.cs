@@ -98,6 +98,10 @@ namespace Hercor.Controllers
                     banner.Image = Path.GetFileName(Image.FileName);
                 }
                 db.Entry(banner).State = EntityState.Modified;
+                if (Image == null)
+                {
+                    db.Entry(banner).Property(m => m.Image).IsModified = false;
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

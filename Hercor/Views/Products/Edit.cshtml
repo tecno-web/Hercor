@@ -57,7 +57,13 @@
                         @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Page, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.Page)
+                        @Html.ValidationMessageFor(model => model.Page, "", new { @class = "text-danger" })
+                    </div>
+                </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Eliminate, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">

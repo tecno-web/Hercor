@@ -17,7 +17,7 @@
                 {
                     if (item.BannerId == 1)
                     {
-                        <div class="item active" style="background-image: url(../Content/images/slider/@item.Image)">
+                        <div class="item active" style="background-image: url(../Content/images/banner/@item.Image)">
                             <div class="carousel-caption">
                                 <div>
                                     <h2 class="heading animated bounceInDown">@item.Title</h2>
@@ -28,7 +28,7 @@
                     }
                     else
                     {
-                        <div class="item" style="background-image: url(../Content/images/slider/@item.Image)">
+                        <div class="item" style="background-image: url(../Content/images/banner/@item.Image)">
                             <div class="carousel-caption">
                                 <div>
                                     <h2 class="heading animated bounceInDown">@item.Title</h2>
@@ -110,7 +110,7 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                if (item.Eliminate == true)
+                if (item.Eliminate == true && item.Page == 0)
                 {
                     <div class="col-sm-4">
                         <div class="single-blog">
@@ -140,9 +140,8 @@
                                         <script type="text/jscript">
                                             $('#read').click(function () {
                                                 var url = "/Products/Detalle/";
-                                                var slug = "@item.Slug";
-                                                var res = url.concat(slug);
-                                                console.log(res);
+                                                var id = "@item.ProductId";
+                                                var res = url.concat(id);
                                                 $.get(res, null, function (data) {
                                                     $("#rData").html(data);
                                                 });

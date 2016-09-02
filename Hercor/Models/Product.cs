@@ -8,6 +8,11 @@ using System.Web.Mvc;
 
 namespace Hercor.Models
 {
+    public enum Page
+    {
+        Hercor = 0,
+        Ricort = 1,
+    }
     public class Product
     {
         [Key]
@@ -21,6 +26,8 @@ namespace Hercor.Models
         public string Content { get; set; }
         public string Slug { get; set; }
         public string Image { get; set; }
+        [Display(Name = "Pagina")]
+        public Page Page { get; set; }
         [Display(Name = "Habilitado")]
         public bool Eliminate { get; set; }
         public List<CategoryProductPivot> CategoryProduct { get; set; }

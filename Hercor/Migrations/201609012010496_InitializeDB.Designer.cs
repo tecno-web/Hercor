@@ -7,13 +7,13 @@ namespace Hercor.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class UpdateTableProductSlug : IMigrationMetadata
+    public sealed partial class InitializeDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateTableProductSlug));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitializeDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201608230316269_UpdateTableProductSlug"; }
+            get { return "201609012010496_InitializeDB"; }
         }
         
         string IMigrationMetadata.Source

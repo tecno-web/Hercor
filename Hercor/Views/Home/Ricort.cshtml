@@ -1,0 +1,150 @@
+﻿@model IEnumerable<Hercor.Models.Product>
+@{
+    ViewBag.Title = "Ricort";
+    Layout = "~/Views/Shared/_LayoutRicort.cshtml";
+}
+
+<section id="home">
+    <div class="home-pattern"></div>
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            
+                    <div class="item active" style="background-image: url(../Content/images/banner/construccion.jpg)">
+                        <div class="carousel-caption">
+                            <div>
+                                <h2 class="heading animated bounceInDown">RICORT CONSTRUCTORA</h2>
+                                <p class="animated bounceInUp"></p>
+                            </div>
+                        </div>
+                    </div>
+
+            
+        </div><!--/.carousel-inner-->
+    </div>
+
+</section><!--/#home-->
+
+<section id="blog">
+    <div class="container">
+        <div class="row text-center clearfix">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2 class="title-one">PRODUCTOS</h2>
+                <p class="blog-heading">Conozca todos nuestros productos.</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                if (item.Eliminate == true && item.Page != 0)
+                {
+                    <div class="col-sm-4">
+                        <div class="single-blog">
+                            @if (item.Image != null)
+                            {
+                                <img src="~/Content/images/product/@item.Image" alt="" />
+                            }
+                            else
+                            {
+                                <img src="~/Content/images/blog/1.jpg" alt="" />
+                            }
+                            <h2>@item.Title</h2>
+                            @*<ul class="post-meta">
+                                    <li><i class="fa fa-pencil-square-o"></i><strong> Posted By:</strong> John</li>
+                                    <li><i class="fa fa-clock-o"></i><strong> Posted On:</strong> Apr 15 2014</li>
+                                </ul>*@
+                            <div class="blog-content">
+                                <p>@item.Description</p>
+                            </div>
+                            <a href="" id="read" class="btn btn-primary" data-toggle="modal" data-target="#blog-seven">Mas Informacion</a>
+                        </div>
+                        <div class="modal fade" id="blog-seven" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <script type="text/jscript">
+                                            $('#read').click(function () {
+                                                var url = "/Products/Detalle/";
+                                                var id = "@item.ProductId";
+                                                var res = url.concat(id);
+                                                $.get(res, null, function (data) {
+                                                    $("#rData").html(data);
+                                                });
+                                            })
+                                        </script>
+                                        <p id="rData"></p>
+                                        @Html.Raw(item.Content)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section> <!--/#blog-->
+<section id="our-team">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-sm-8 col-sm-offset-2">
+						<h2 class="title-one">Cotización</h2>
+						<p>Cotize con nosotros su proyecto</p>
+					</div>
+				</div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        @using (Html.BeginForm("Ricort", "Home", FormMethod.Post, new { @class = "contact", @id = "contact-form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control name-field" required="required" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" class="form-control mail-field" required="required" placeholder="Telefono">
+                            </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control name-field" required="required" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="lugar" class="form-control mail-field" required="required" placeholder="Lugar de Construcción">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="metros" class="form-control name-field" required="required" placeholder="De cuantos metros quiere su casa">
+                                </div>
+                                <div class="form-group">
+                                    <select name="estilo" class="form-control mail-field">
+                                        <option selected value="#">Seleccione estilo</option>
+                                        <option value="colonial">Colonial</option>
+                                        <option value="minimalista">Minimalista</option>
+                                        <option value="americana">Americana</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="plantas" class="form-control name-field">
+                                        <option selected value="#">Seleccione cantidad de plantas</option>
+                                        <option value="1 Planta">Una Planta</option>
+                                        <option value="2 Plantas">Dos Plantas</option>
+                                        <option value="3 Plantas">Tres Plantas</option>
+                                        <option value="mas de 3">Mas de Tres</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="topografia" class="form-control mail-field">
+                                        <option selected value="#">Seleccione topografia del terreno</option>
+                                        <option value="plano">Terreno Plano</option>
+                                        <option value="desnivel">Terreno en desnivel</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Comentarios"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
+                        }
+                    </div>
+                </div>
+			</div>
+		</section>

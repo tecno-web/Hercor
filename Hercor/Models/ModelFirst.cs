@@ -14,7 +14,6 @@
         public DbSet<Product> Product { get; set; }
         public DbSet<Banner> Banner { get; set; }
         public DbSet<ArticleCategory> ArticleCategory { get; set; }
-        public DbSet<Proyect> Proyect { get; set; }
         public DbSet<Image> Image { get; set; }
         public DbSet<CategoryProduct> CategoryProduct { get; set; }
         public DbSet<CategoryProductPivot> CategoryProductPivot { get; set; }
@@ -62,18 +61,8 @@
             Property(p=>p.Content);
             Property(p=>p.Slug);
             Property(p => p.Image).IsOptional();
+            Property(p=>p.Page);
             Property(p => p.Eliminate);
-        }
-    }
-    public class ProyectMap : EntityTypeConfiguration<Proyect>
-    {
-        public ProyectMap()
-        {
-            HasKey(p=>p.ProyectId);
-            Property(p => p.Title).IsRequired();
-            Property(p => p.Description).IsRequired().HasColumnType("varchar").HasMaxLength(500);
-            Property(p=>p.Latitude);
-            Property(p=>p.Longitude);
         }
     }
     public class ArticleCategoryMap : EntityTypeConfiguration<ArticleCategory>

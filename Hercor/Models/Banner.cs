@@ -15,10 +15,8 @@ namespace Hercor.Models
         [Required]
         public string Title { get; set; }
         [Display(Name = "Descripcion")]
-        [Required]
         public string Description { get; set; }
         [Display(Name = "Imagen")]
-        [Required]
         public string Image { get; set; }
         [Display(Name = "Habilitado")]
         public bool Eliminate { get; set; }

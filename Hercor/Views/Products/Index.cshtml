@@ -29,6 +29,9 @@
                     @Html.DisplayNameFor(model => model.Image)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.Page)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Eliminate)
                 </th>
                 <th></th>
@@ -52,6 +55,9 @@
                     </td>
                     <td>
                         <img src="~/Content/images/product/@item.Image" width="100" alt="" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Page)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Eliminate)

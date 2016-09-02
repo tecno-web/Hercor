@@ -12,7 +12,6 @@ namespace Hercor.Models
         [Display(Name = "Imagen")]
         [Required]
         public string ImageProduct { get; set; }
-
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
     }

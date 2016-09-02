@@ -103,6 +103,10 @@ namespace Hercor.Controllers
                     image.ImageProduct = Path.GetFileName(ImageProduct.FileName);
                 }
                 db.Entry(image).State = EntityState.Modified;
+                if (ImageProduct == null)
+                {
+                    db.Entry(image).Property(m => m.ImageProduct).IsModified = false;
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

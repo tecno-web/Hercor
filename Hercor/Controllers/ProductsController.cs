@@ -24,25 +24,14 @@ namespace Hercor.Controllers
         }
 
         //GET: Products/Detalle/slug
-        public ActionResult Detalle(string id)
+        public ActionResult Detalle(int id)
         {
-            var ProductId = 0;
             if (id.Equals(null))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var product = db.Product.Where(p=>p.Slug.Equals(id));
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            foreach (var item in product)
-            {
-                 ProductId = item.ProductId;
-            }
-            ViewBag.Image = db.Image.Where(p => p.ProductId.Equals(ProductId));
-            Product pr = db.Product.Find(ProductId);
-            return View(pr);
+            ViewBag.Image = db.Image.Where(p => p.ProductId.Equals(id));
+            return View();
 
         }
         // GET: Products/Details/5
@@ -74,7 +63,7 @@ namespace Hercor.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "ProductId,Title,Description,,Content,Slug,Image,Eliminate")] Product product, HttpPostedFileBase Image)
+        public ActionResult Create([Bind(Include = "ProductId,Title,Description,,Content,Slug,Image,Page,Eliminate")] Product product, HttpPostedFileBase Image)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +104,7 @@ namespace Hercor.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Edit([Bind(Include = "ProductId,Title,Description,,Content,Slug,Image,Eliminate")] Product product, HttpPostedFileBase Image)
+        public ActionResult Edit([Bind(Include = "ProductId,Title,Description,Content,Slug,Image,Page,Eliminate")] Product product, HttpPostedFileBase Image)
         {
             
             if (ModelState.IsValid)
@@ -127,7 +116,12 @@ namespace Hercor.Controllers
                     Image.SaveAs(path);
                     product.Image = Path.GetFileName(Image.FileName);
                 }
+                
                 db.Entry(product).State = EntityState.Modified;
+                if (Image == null)
+                {
+                    db.Entry(product).Property(m => m.Image).IsModified = false;
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
