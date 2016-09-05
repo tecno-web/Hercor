@@ -184,53 +184,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201608081418097_InitializeDB.cs" />
-    <Compile Include="Migrations\201608081418097_InitializeDB.Designer.cs">
-      <DependentUpon>201608081418097_InitializeDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608180312341_AddFieldProduct.cs" />
-    <Compile Include="Migrations\201608180312341_AddFieldProduct.Designer.cs">
-      <DependentUpon>201608180312341_AddFieldProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608190347109_ModifyFieldImage.cs" />
-    <Compile Include="Migrations\201608190347109_ModifyFieldImage.Designer.cs">
-      <DependentUpon>201608190347109_ModifyFieldImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608190412191_ModifyFieldImage1.cs" />
-    <Compile Include="Migrations\201608190412191_ModifyFieldImage1.Designer.cs">
-      <DependentUpon>201608190412191_ModifyFieldImage1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608192126153_AddProyect.cs" />
-    <Compile Include="Migrations\201608192126153_AddProyect.Designer.cs">
-      <DependentUpon>201608192126153_AddProyect.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608221931325_AddCategoryProduct.cs" />
-    <Compile Include="Migrations\201608221931325_AddCategoryProduct.Designer.cs">
-      <DependentUpon>201608221931325_AddCategoryProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608230212344_UpdateTableCategoryProduct.cs" />
-    <Compile Include="Migrations\201608230212344_UpdateTableCategoryProduct.Designer.cs">
-      <DependentUpon>201608230212344_UpdateTableCategoryProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608230308449_UpdateTableProduct.cs" />
-    <Compile Include="Migrations\201608230308449_UpdateTableProduct.Designer.cs">
-      <DependentUpon>201608230308449_UpdateTableProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608230316269_UpdateTableProductSlug.cs" />
-    <Compile Include="Migrations\201608230316269_UpdateTableProductSlug.Designer.cs">
-      <DependentUpon>201608230316269_UpdateTableProductSlug.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608232242524_AddTableBanner.cs" />
-    <Compile Include="Migrations\201608232242524_AddTableBanner.Designer.cs">
-      <DependentUpon>201608232242524_AddTableBanner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608240240103_UpdateTableBanner.cs" />
-    <Compile Include="Migrations\201608240240103_UpdateTableBanner.Designer.cs">
-      <DependentUpon>201608240240103_UpdateTableBanner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608241328106_AddTableImage.cs" />
-    <Compile Include="Migrations\201608241328106_AddTableImage.Designer.cs">
-      <DependentUpon>201608241328106_AddTableImage.cs</DependentUpon>
+    <Compile Include="Migrations\201609012010496_InitializeDB.cs" />
+    <Compile Include="Migrations\201609012010496_InitializeDB.Designer.cs">
+      <DependentUpon>201609012010496_InitializeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -245,7 +201,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ModelFirst.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Proyect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -411,10 +366,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -461,6 +413,8 @@
     <Content Include="Views\Images\Details.cshtml" />
     <Content Include="Views\Images\Edit.cshtml" />
     <Content Include="Views\Images\Index.cshtml" />
+    <Content Include="Views\Home\Ricort.cshtml" />
+    <Content Include="Views\Shared\_LayoutRicort.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Images\" />
@@ -476,41 +430,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608081418097_InitializeDB.resx">
-      <DependentUpon>201608081418097_InitializeDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608180312341_AddFieldProduct.resx">
-      <DependentUpon>201608180312341_AddFieldProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608190347109_ModifyFieldImage.resx">
-      <DependentUpon>201608190347109_ModifyFieldImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608190412191_ModifyFieldImage1.resx">
-      <DependentUpon>201608190412191_ModifyFieldImage1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608192126153_AddProyect.resx">
-      <DependentUpon>201608192126153_AddProyect.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608221931325_AddCategoryProduct.resx">
-      <DependentUpon>201608221931325_AddCategoryProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608230212344_UpdateTableCategoryProduct.resx">
-      <DependentUpon>201608230212344_UpdateTableCategoryProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608230308449_UpdateTableProduct.resx">
-      <DependentUpon>201608230308449_UpdateTableProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608230316269_UpdateTableProductSlug.resx">
-      <DependentUpon>201608230316269_UpdateTableProductSlug.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608232242524_AddTableBanner.resx">
-      <DependentUpon>201608232242524_AddTableBanner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608240240103_UpdateTableBanner.resx">
-      <DependentUpon>201608240240103_UpdateTableBanner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608241328106_AddTableImage.resx">
-      <DependentUpon>201608241328106_AddTableImage.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609012010496_InitializeDB.resx">
+      <DependentUpon>201609012010496_InitializeDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
