@@ -179,6 +179,7 @@
     <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -187,6 +188,10 @@
     <Compile Include="Migrations\201609012010496_InitializeDB.cs" />
     <Compile Include="Migrations\201609012010496_InitializeDB.Designer.cs">
       <DependentUpon>201609012010496_InitializeDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609051950584_CreateTableInformation.cs" />
+    <Compile Include="Migrations\201609051950584_CreateTableInformation.Designer.cs">
+      <DependentUpon>201609051950584_CreateTableInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -198,6 +203,7 @@
     <Compile Include="Models\CategoryProductPivot.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Information.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ModelFirst.cs" />
     <Compile Include="Models\Product.cs" />
@@ -415,6 +421,11 @@
     <Content Include="Views\Images\Index.cshtml" />
     <Content Include="Views\Home\Ricort.cshtml" />
     <Content Include="Views\Shared\_LayoutRicort.cshtml" />
+    <Content Include="Views\Information\Create.cshtml" />
+    <Content Include="Views\Information\Delete.cshtml" />
+    <Content Include="Views\Information\Details.cshtml" />
+    <Content Include="Views\Information\Edit.cshtml" />
+    <Content Include="Views\Information\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Images\" />
@@ -432,6 +443,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609012010496_InitializeDB.resx">
       <DependentUpon>201609012010496_InitializeDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609051950584_CreateTableInformation.resx">
+      <DependentUpon>201609051950584_CreateTableInformation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
