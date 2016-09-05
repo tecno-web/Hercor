@@ -18,6 +18,7 @@ namespace Hercor.Controllers
             var product = model.Product;
             var banner = model.Banner;
             ViewBag.data = banner.ToList();
+            ViewBag.Information = model.Information.ToList();
             return View(product.ToList());
         }
         //
@@ -44,6 +45,7 @@ namespace Hercor.Controllers
             var product = model.Product;
             var banner = model.Banner;
             ViewBag.data = banner.ToList();
+            ViewBag.Information = model.Information.ToList();
             return View(product.ToList());
         }
         public ActionResult Admin()

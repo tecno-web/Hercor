@@ -15,6 +15,7 @@
         public DbSet<Banner> Banner { get; set; }
         public DbSet<ArticleCategory> ArticleCategory { get; set; }
         public DbSet<Image> Image { get; set; }
+        public DbSet<Information> Information { get; set; }
         public DbSet<CategoryProduct> CategoryProduct { get; set; }
         public DbSet<CategoryProductPivot> CategoryProductPivot { get; set; }
 
@@ -105,6 +106,17 @@
             HasKey(p => p.ImageId);
             Property(p => p.ImageProduct);
             
+        }
+    }
+    public class InformationMap : EntityTypeConfiguration<Information>
+    {
+        public InformationMap()
+        {
+            HasKey(p => p.Id);
+            Property(p => p.Mission);
+            Property(p => p.Vision);
+            Property(p => p.History);
+
         }
     }
 }

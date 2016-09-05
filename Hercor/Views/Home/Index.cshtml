@@ -74,21 +74,30 @@
 						<div class="tab-pane fade in active" id="about">
 							<div class="media">
 								<div class="media-body">
-									<p>Producir y comercializar una extensa gama de prefabricados de concreto y servicios relacionados con la construcción, actualizar sobre sus nuevas tecnologías a las personas relacionadas con el sector, empeñados siempre en la garantía, seguridad, durabilidad y calidad de nuestros productos esperando sobrepasar las expectativas del cliente.</p>
+                                    @foreach (var info in ViewBag.Information)
+                                    {
+                                        @Html.Raw(@info.Mission)
+                                    }
 								</div>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="mission">
 							<div class="media">
 								<div class="media-body">
-									<p><div><span style="line-height: 1.42857;">Ser la empresa líder y reconocidos por nuestra marca en la industria Cruceña en la fabricación y suministro de Prefabricados de Concreto, productos y servicios afines, que garantiza la mejor calidad y satisfacción al cliente, promoviendo el desarrollo y bienestar de nuestro personal y de la sociedad.</span><br></div><div>Nuestros Valores</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Credibilidad</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Responsabilidad</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Capacidad de Compromiso</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Fiabilidad</div></p>
+                                    @foreach (var info in ViewBag.Information)
+                                    {
+                                        @Html.Raw(@info.Vision)
+                                    }
 								</div>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="community">
 							<div class="media">
 								<div class="media-body">
-									<p><div>HERCOR es una empresa fabricante de productos prefabricados de concreto que inició operaciones en la ciudad de Santa Cruz, tras un asocio entre inversionistas cruceños.</div><div>Desde sus inicios cuenta con tecnología, capaz de producir productos prefabricados de concreto tales como: Viguetas pretensadas, cordones, postes para enmallados, mallas olímpicas, etc.</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Esta tecnología permite garantizar altos estándares de calidad para producir productos siguiendo las normas internacionales de fabricación como lo es la norma internacional de absorción y resistencia ASTM C90.</div><div>•<span class="Apple-tab-span" style="white-space:pre">	</span>Toda esta tecnología va acompañada por una excelente atención personalizada de sus INGENIEROS-ARQUITECTOS quienes conocen, entienden y escuchan las necesidades y expectativas de los clientes y les facilitan las soluciones más beneficiosas para cada una de sus necesidades y así conozcan la calidad y garantía de la marca HERCOR.</div><div>Le invitamos a que nos conozca y pruebe nuestros productos y le garantizamos que una vez que usted pruebe uno de nuestros productos HERCOR, usted jamás dejará de ser un cliente HERCOR</div><div>HERCOR ES SERVICIO, HERCOR ES CALIDAD, HERCOR ES TECNOLOGIA A UN PRECIO JUSTO.</div></p>
+                                    @foreach (var info in ViewBag.Information)
+                                    {
+                                        @Html.Raw(@info.History)
+                                    }
 								</div>
 							</div>
 						</div>
