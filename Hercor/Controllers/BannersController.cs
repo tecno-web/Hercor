@@ -11,6 +11,7 @@ using System.IO;
 
 namespace Hercor.Controllers
 {
+    [Authorize]
     public class BannersController : Controller
     {
         private ModelFirst db = new ModelFirst();
